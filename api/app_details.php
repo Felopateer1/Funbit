@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funbit - App Details - Funbit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
     <style>
         body {
@@ -60,6 +62,25 @@
     margin-right: 20px;
     border-radius: 5px;
         }
+        
+        .dislike-button {
+            margin-right: 10px;
+            background-color: transparent;
+            border: none;
+            color: black;
+            cursor: pointer;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        .dislike-button i {
+            margin-right: 5px;
+            color: #FFC107;
+        }
+
+        .dislike-button:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -69,7 +90,7 @@
         <?php
         // Dummy data for app details
         $appDetails = [
-            1 => ['id' => 1, 'name' => 'Spotify: Music and Podcasts', 'description' => 'Spotify: Music and Podcasts', 'developer' => 'https://d.apkpure.com/b/APK/com.spotify.music?version=latest', 'version' => '8.8.88.397 By <a href="#" style="text-decoration:none;color:blue;font-weight:600;">Spotify AB</a>'],
+            1 => ['id' => 1, 'name' => 'Spotify: Music and Podcasts', 'description' => "<button class='dislike-button' type='button'><i class='fas fa-star'></i>5</button>", 'developer' => 'https://d.apkpure.com/b/APK/com.spotify.music?version=latest', 'version' => '8.8.88.397 By <a href="#" style="text-decoration:none;color:blue;font-weight:600;">Spotify AB</a>'],
         ];
 
         // Check if the 'id' parameter is set in the URL
@@ -79,7 +100,7 @@
             $iconPath = "../icons/{$app['id']}.webp";
             echo '<img src="' . $iconPath . '" alt="' . $app['name'] . ' Icon">';
             echo '<h2>' . $app['name'] . '</h2>';
-            echo '<p><strong>Description:</strong> ' . $app['description'] . '</p>';
+            echo '<p><strong>Rate:</strong> ' . $app['description'] . '</p>';
             echo '<p><strong>Version:</strong> ' . $app['version'] . '</p>';
 
             // Download button

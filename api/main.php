@@ -25,7 +25,7 @@
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            width: 300px;
+            width: 97.5%;
             margin-right: 10px;
         }
 
@@ -76,7 +76,7 @@ h1, h2, p {
 
 .app p {
     color: #555;
-    display: flex
+    display: flex;
 }
 
 .app a {
@@ -112,23 +112,84 @@ h1, h2, p {
             border: none;
             color: black;
             cursor: pointer;
+            font-size: 1.3em;
+            font-weight: 600;
         }
 
         button i {
             margin-right: 5px;
-            color: yellow;
+            color: #FFC107;
         }
 
         button:focus {
             outline: none;
         }
+        .container {
+    transition: background-color 0.5s;
+    border-radius: 20px;
+}
+        body {
+    transition: background-color 0.5s;
 
+}
+.darkmod{
+    background-color: #1a1a1a; /* Dark background color */
+}
+.dark-mode {
+    background-color: black; /* Dark background color */
+    color: #ffffff; /* Light text color */
+}
+
+.dark-mode .app button{
+    color: white;
+}
+.dark-mode button{
+    color: white;
+}
+.dark-mode svg{
+    stroke: white;
+}
+
+        header{
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+.logo{
+    color: #4285f4;
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+@media screen and (max-width: 1023px) {
+    header{
+        padding: 10px 10px;
+    }
+}
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Welcome to Funbit Store | Find Your Apps & Games</h1>
+<div class="container" id="mainContainer">
+    <header>
+        <a href="main.php" class="logo">Funbit</a>
+        <nav>
+        <button id="dark-mode-toggle"><svg width="40" height="40" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M14 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path>
+  <path d="M4 6h8"></path>
+  <path d="M16 6h4"></path>
+  <path d="M8 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path>
+  <path d="M4 12h2"></path>
+  <path d="M10 12h10"></path>
+  <path d="M17 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path>
+  <path d="M4 18h11"></path>
+  <path d="M19 18h1"></path>
+</svg></button>
+
+        </nav>
+    </header>
 
     <!-- Search bar -->
     <form id="searchForm">
@@ -138,7 +199,7 @@ h1, h2, p {
     <?php
     // Dummy data for app listing with icons
     $apps = [
-        ['id' => 1, 'name' => 'Spotify: Music and Podcasts', 'description' => "<button class='dislike-button' type='button'><i class='fas fa-star'></i>843</button>"],
+        ['id' => 1, 'name' => 'Spotify: Music and Podcasts', 'description' => "<button class='dislike-button' type='button'><i class='fas fa-star'></i>5</button>"],
     ];
 
     foreach ($apps as $app) {
@@ -174,6 +235,17 @@ h1, h2, p {
             }
         }
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const mainContainer = document.getElementById('mainContainer');
+
+    darkModeToggle.addEventListener('click', function () {
+        document.body.classList.toggle('darkmod');
+        mainContainer.classList.toggle('dark-mode');
+    });
+});
+
 </script>
 
 </body>
