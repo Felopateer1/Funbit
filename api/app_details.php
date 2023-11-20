@@ -83,7 +83,7 @@
             echo '<p>Invalid app ID or app not found.</p>';
         }
         ?>
-        <a href="download.php?url=<?php echo urlencode($app['developer']); ?>" class="download-btn">Download Now</a>
+        <a href="<?php echo $app['developer']; ?>" class="download-btn">Download Now</a>
         <a href="main.php" class="back-btn">Back to App List</a>
 
     </div>
