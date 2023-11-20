@@ -81,6 +81,7 @@ h1, h2, p {
     color: #4285f4;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.2em;
 }
 
 .app a:hover {
@@ -110,7 +111,6 @@ h1, h2, p {
     <!-- Search bar -->
     <form id="searchForm">
         <input type="text" id="searchQuery" placeholder="Search for apps and games">
-        <input type="submit" id="searchSubmit" value="Search">
     </form>
 <br>
     <?php
@@ -125,9 +125,8 @@ h1, h2, p {
         $iconPath = "../icons/{$app['id']}.webp";
         echo '<img src="' . $iconPath . '" alt="' . $app['name'] . '">';
         echo '<div>';
-        echo '<h2>' . $app['name'] . '</h2>';
+        echo '<a href="app_details.php?id=' . $app['id'] . '">' . $app['name'] . '</a>';
         echo '<p>' . $app['description'] . '</p>';
-        echo '<a href="app_details.php?id=' . $app['id'] . '">View Details</a>';
         echo '</div>';
         echo '</div>';
     }
@@ -143,7 +142,7 @@ h1, h2, p {
         var apps = document.getElementsByClassName("app");
 
         for (var i = 0; i < apps.length; i++) {
-            var appName = apps[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+            var appName = apps[i].getElementsByTagName("a")[0].innerText.toLowerCase();
             var appDescription = apps[i].getElementsByTagName("p")[0].innerText.toLowerCase();
 
             if (appName.includes(query) || appDescription.includes(query)) {
