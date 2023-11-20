@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funbit | Find Your Games And Apps</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../css/index.css">
     <style>
         /* Additional styling for the layout */
@@ -75,6 +76,7 @@ h1, h2, p {
 
 .app p {
     color: #555;
+    display: flex
 }
 
 .app a {
@@ -101,6 +103,26 @@ h1, h2, p {
     margin-right: 20px;
     border-radius: 5px;
 }
+
+
+
+        button {
+            margin-right: 10px;
+            background-color: transparent;
+            border: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        button i {
+            margin-right: 5px;
+            color: yellow;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
     </style>
 </head>
 <body>
@@ -116,7 +138,7 @@ h1, h2, p {
     <?php
     // Dummy data for app listing with icons
     $apps = [
-        ['id' => 1, 'name' => 'Spotify: Music and Podcasts', 'description' => 'Spotify: Music and Podcasts'],
+        ['id' => 1, 'name' => 'Spotify: Music and Podcasts', 'description' => "<button class='dislike-button' type='button'><i class='fas fa-star'></i>843</button>"],
     ];
 
     foreach ($apps as $app) {

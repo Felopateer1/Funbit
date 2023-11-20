@@ -55,24 +55,29 @@
         .back-btn:hover {
             text-decoration: underline;
         }
+        img{
+            max-width: 100px; /* Adjust the size as needed */
+    margin-right: 20px;
+    border-radius: 5px;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>App Details</h1>
 
         <?php
         // Dummy data for app details
         $appDetails = [
-            1 => ['name' => 'Spotify: Music and Podcasts', 'description' => 'Spotify: Music and Podcasts', 'developer' => 'https://d.apkpure.com/b/APK/com.spotify.music?version=latest', 'version' => '8.8.88.397 By <a href="#" style="text-decoration:none;color:blue;font-weight:600;">Spotify AB</a>'],
+            1 => ['id' => 1, 'name' => 'Spotify: Music and Podcasts', 'description' => 'Spotify: Music and Podcasts', 'developer' => 'https://d.apkpure.com/b/APK/com.spotify.music?version=latest', 'version' => '8.8.88.397 By <a href="#" style="text-decoration:none;color:blue;font-weight:600;">Spotify AB</a>'],
         ];
 
         // Check if the 'id' parameter is set in the URL
         if (isset($_GET['id']) && isset($appDetails[$_GET['id']])) {
             $appId = $_GET['id'];
             $app = $appDetails[$appId];
-
+            $iconPath = "../icons/{$app['id']}.webp";
+            echo '<img src="' . $iconPath . '" alt="' . $app['name'] . ' Icon">';
             echo '<h2>' . $app['name'] . '</h2>';
             echo '<p><strong>Description:</strong> ' . $app['description'] . '</p>';
             echo '<p><strong>Version:</strong> ' . $app['version'] . '</p>';
