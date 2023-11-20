@@ -84,7 +84,7 @@
         }
         ?>
         <a href="download.php?url=<?php echo urlencode($app['developer']); ?>" class="download-btn">Download Now</a>
-        <a href="index.php" class="back-btn">Back to App List</a>
+        <a href="main.php" class="back-btn">Back to App List</a>
 
     </div>
 
