@@ -25,8 +25,15 @@
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            width: 97.5%;
+            width: 90%;
             margin-right: 10px;
+            margin-left: 10px;
+        
+        }
+        form{
+            justify-content: center;
+            text-align: center;
+            align-items: center;
         }
 
         #searchQuery:focus {
@@ -199,7 +206,8 @@ h1, h2, p {
     <?php
     // Dummy data for app listing with icons
     $apps = [
-        ['id' => 1, 'name' => 'Spotify: Music and Podcasts', 'description' => "<button class='dislike-button' type='button'><i class='fas fa-star'></i>5</button>"],
+        ['id' => 1, 'name' => 'Spotify: Music and Podcasts', 'description' => "<button class='dislike-button' type='button'><i class='fas fa-star'></i>7.8</button>"],
+        ['id' => 2, 'name' => 'TikTok', 'description' => "<button class='dislike-button' type='button'><i class='fas fa-star'></i>8.2</button>"],
     ];
 
     foreach ($apps as $app) {

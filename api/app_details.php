@@ -91,6 +91,7 @@
         // Dummy data for app details
         $appDetails = [
             1 => ['id' => 1, 'name' => 'Spotify: Music and Podcasts', 'description' => "<button class='dislike-button' type='button'><i class='fas fa-star'></i>5</button>", 'developer' => 'https://d.apkpure.com/b/APK/com.spotify.music?version=latest', 'version' => '8.8.88.397 By <a href="#" style="text-decoration:none;color:blue;font-weight:600;">Spotify AB</a>'],
+            2 => ['id' => 2, 'name' => 'TikTok', 'description' => "<button class='dislike-button' type='button'><i class='fas fa-star'></i>8.2</button>", 'developer' => 'https://d.apkpure.com/b/APK/com.zhiliaoapp.musically?version=latest', 'version' => '32.4.3 By <a href="#" style="text-decoration:none;color:blue;font-weight:600;">TikTok Pte. Ltd.</a>'],
         ];
 
         // Check if the 'id' parameter is set in the URL
